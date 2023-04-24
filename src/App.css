@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-color: #757575;
+  padding-top: 20px;
+  height: 100vh;
 }
 
 .App-logo {
@@ -13,26 +16,154 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+h1{
+  margin: 0 0 30px 0;
+}
+
+.boardContainer{
+  width: 100%;
+  display: flex;
+}
+
+.boardWrapper{
+
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board{
+  width: fit-content;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: rgb(66, 66, 66);
+  border: 2px rgb(47, 47, 47) solid;
+}
+
+.setting{
+  width: 500px;
+  height: 580px;
+  background-color: #fff;
+  margin-left: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid rgb(89, 89, 89);
+}
+
+.title{
+  font-size: 26px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.size{
+  width: 80%;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 20px 0;
+  border: inset 5px rgb(197, 197, 197);
+}
+
+.label1{
+  display: flex;
+  justify-content: flex-start;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.size-option{
+  width: 100%;
+  /* background-color: #c70404; */
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.size-input{
+  width: 50%;
+}
+
+
+
+.h{
+  margin: 20px 0;
+  width: 80%;
+  height: 150px;
+  box-sizing: border-box;
+  padding: 10px;
+  border: inset 5px rgb(197, 197, 197);
+}
+
+.label1{
+  display: flex;
+  justify-content: flex-start;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.h-option{
+  width: 100%;
+  /* background-color: #c70404; */
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  
+}
+
+.h-input{
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+
+
+.control{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.control > button{
+  width: 120px;
+  background-color: #1530fb;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+.saveBtn{
+  margin: 10px;
+  cursor: pointer;
+  width: 90px;
+  height: 30px;
+}
+
+.applyBtn{
+  margin: 10px;
+  cursor: pointer;
+  width: 90px;
+  height: 30px;
+  background-color: #364af8;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row{
+  display: flex;
 }
