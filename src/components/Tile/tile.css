@@ -1,16 +1,27 @@
-.tile{
+.tile4{
     position: relative;
     width: 140px;
     height: 140px;
     margin: 1px;
-    
-    /* background-color: #da0909; */
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     z-index: 99;
 }
+
+.tile3{
+    position: relative;
+    width: 186px;
+    height: 186px;
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 99;
+}
+
 
 img{
     width: 100%;
@@ -26,9 +37,17 @@ span{
     color: aliceblue;
 }
 
-.none{
+.none4{
     width: 140px;
     height: 140px;
+    margin: 1px;
+    /* border: 0,5px solid rgb(155, 154, 154); */
+    box-sizing: border-box;
+}
+
+.none3{
+    width: 186px;
+    height: 186px;
     margin: 1px;
     /* border: 0,5px solid rgb(155, 154, 154); */
     box-sizing: border-box;

@@ -4,7 +4,7 @@ import "./tile.css"
 const Tile = ({index, slideable, size,handleSlide}) => {
 
     return (
-        <div style={slideable.includes(index) ? {cursor: "pointer"} : null} className={index !== 0 ? "tile" : "none"} onClick={() => {
+        <div style={slideable.includes(index) ? {cursor: "pointer"} : null} className={size == 3 ? index !== 0 ?  "tile3" : "none3" : index !== 0 ?  "tile4" : "none4" } onClick={() => {
             if(slideable.includes(index)){
                 handleSlide(index)
             }
@@ -12,8 +12,8 @@ const Tile = ({index, slideable, size,handleSlide}) => {
             {
                 index !== 0
                 ?
-                <>
-                    <img src={`/br/${index}.jpg`} alt="" />
+                <>  
+                    <img src={size == 3 ? `/ai3/${index}.jpg` : `/ai4/${index}.jpg`} alt="" />
                     <span>{index}</span>
                 </>
                 :

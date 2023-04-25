@@ -61,7 +61,7 @@ function App() {
 			if (count === guide.length - 1) {
 			  clearInterval(id);
 			}
-		  }, 50);
+		  }, 500);
 		}
 	  },[guide]);
             
