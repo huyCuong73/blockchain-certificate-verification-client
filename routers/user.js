@@ -1,6 +1,6 @@
 import verify from "../middleware/verify.js";
 import express from "express";
-import { UserModel } from "../models/user.js";
+import { UserModel } from "../models/User.js";
 import institutionVerify from "../middleware/institutionVerify.js";
 import cryptico from "cryptico"
 

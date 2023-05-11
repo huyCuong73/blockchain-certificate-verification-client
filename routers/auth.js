@@ -8,7 +8,7 @@ import bcrypt from "bcrypt"
 import CryptoJS from "crypto-js";
 
 import dotenv from "dotenv"
-import { UserModel } from "../models/user.js";
+import { UserModel } from "../models/User.js";
 import verify from "../middleware/verify.js";
 import institutionVerify from "../middleware/institutionVerify.js";
 dotenv.config();
