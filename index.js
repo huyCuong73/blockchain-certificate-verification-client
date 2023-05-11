@@ -15,8 +15,8 @@ dotenv.config();
 const app = express();
 const PORT = 3333
 
-const URI = 'mongodb://127.0.0.1:27017/certify'
-// const URI = process.env.URI        
+// const URI = 'mongodb://127.0.0.1:27017/certify'
+const URI = process.env.URI        
 
 console.log(process.env.CLIENT_ID );
 
