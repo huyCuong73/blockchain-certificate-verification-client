@@ -45,7 +45,7 @@ router.post("/register",async (req,res) => {
             })
             .catch(function(error) {
                 console.log(error);
-                res.status(500).json(error)
+                return res.status(500).json(error)
             });
         
     } catch (err) {
@@ -84,7 +84,7 @@ router.post("/register-stu", institutionVerify, async (req,res) => {
             })
             .catch(function(error) {
                 console.log(error);
-                res.status(500).json(error)
+                return res.status(500).json(error)
             });
         
     } catch (err) {
@@ -100,7 +100,7 @@ router.post("/get-user", async(req, res) => {
         const user = await UserModel.findOne({email:req.body.email})
         return res.status(201).json(user)
     } catch (err){
-        res.status(500).json(err);
+        return res.status(500).json(err);
         console.log(err);
     }
 }) 
@@ -132,13 +132,13 @@ router.post("/login", async (req,res) => {
                 return res.status(200).json({...user._doc, encryptedToken})
             } else {
                 console.log('Wrong password');
-                res.status(400).json("wrong password")
+              return res.status(400).json("wrong password")
             }
         });
 
         } else {
             console.log('User not found');
-            res.status(404).json("not found")
+          return res.status(404).json("not found")
         }
     });
       

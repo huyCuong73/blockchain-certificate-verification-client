@@ -12,10 +12,10 @@ router.post("/get-stu", institutionVerify ,async (req, res) => {
             createdBy: req.body.id
         })
 
-        res.status(200).json(students)
+      return res.status(200).json(students)
     } catch(err){
         console.log(err);
-        res.status(500).json(err)
+      return res.status(500).json(err)
     }
     
 })
