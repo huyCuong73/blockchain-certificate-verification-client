@@ -1,0 +1,127 @@
+
+
+
+.header{
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    background-color: #ffffff;
+    align-items: center;
+    display: flex;
+    justify-content: space-around; 
+
+    .nav{
+        font-family: sans-serif;
+        text-decoration: none;
+        // width: 60vw;
+        display: flex;
+
+        a{
+            text-decoration: none;
+        }
+
+        .navItem{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            // width: 12vw;
+            height: 100%;
+            margin: 0 20px;
+            height: 30px;
+
+        }
+
+        .linkActive{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            // width: 12vw;
+            height: 100%;
+            margin: 0 20px;
+            color: #03abda;
+            border-bottom: 4px solid #03abda;
+            height: 30px;
+        }
+    }
+
+    .user{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .authAction{
+            display: flex;
+
+            a{
+                text-decoration: none;
+                color: #0339da;
+            }
+
+            .action{
+                margin-left: 50px;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-weight: 500;
+                cursor: pointer;
+                font-size: 17px;
+            }
+        }
+
+        .info{
+            background-color: #ffffff;
+            border: 2px solid rgb(136, 136, 136);
+            width: fit-content;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+
+            .account{
+                width: 120px;
+                /* background-color: #d8d8d8; */
+                color: #03abda;
+                font-weight: 500;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px 0  0 20px;
+            }
+
+            .balance{
+                width: 120px;
+                background-color: #03abda;
+                color: aliceblue;
+                font-weight: 500;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+            }
+        }
+
+        .avatar{
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            margin-left: 70px;
+        }
+
+        .out{
+            margin-left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+} 
+
+
+

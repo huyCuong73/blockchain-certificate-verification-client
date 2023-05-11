@@ -1,0 +1,111 @@
+.container{
+    width: 60%;
+    height: 100vh;
+    margin-left: 20%;
+    margin-top: 100px;
+
+
+    .cert{
+        display: flex;
+        flex-direction: column;
+        background-color: #f9f7f7;
+        margin-bottom: 20px;
+
+        .title{
+            height: 75px;
+            display: flex;
+            // align-items: center;
+            font-size: 26px;
+            box-sizing: border-box;
+            padding: 20px;
+            font-weight: bold;
+            // border-bottom: 1px solid #000;
+        }
+
+        .docId{
+            box-sizing: border-box;
+            padding: 0 20px;
+        }
+
+        .actions{
+            display: flex;
+            height: 75px;
+            box-sizing: border-box;
+            padding: 20px;
+
+            .invite{
+                width: 70%;
+                display: flex;
+                align-items: center;
+                .link{
+                    flex: 1;
+                    height: 100%;
+                    background-color: #fff;
+                    margin-left: 10px;
+                    display: flex;
+                    box-sizing: border-box;
+                    padding: 0 10px;
+                    align-items: center;
+                    font-weight: 500;
+                }
+            }
+
+            .view{
+                width: 30%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .viewBtn{
+                    width: 50%;
+                    height: 100%;
+                    background-color: #0a78ff;
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .reqList{
+            box-sizing: border-box;
+            padding: 0 20px;
+            .request{
+                margin-bottom: 10px;
+                display: flex;
+    
+                span{
+                    flex: 1
+                }
+                .btnWrapper{
+                    width: 30%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                }
+            }
+        }
+    }
+
+    .docContainer{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(101, 101, 101, 0.4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .doc{
+            width: 90vw;
+        }
+    }
+    
+}

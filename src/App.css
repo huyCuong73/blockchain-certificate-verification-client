@@ -167,3 +167,8 @@ h1{
 .row{
   display: flex;
 }
+
+iframe{
+  width: 70vw;
+  height: 90vh;
+}

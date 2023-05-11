@@ -1,0 +1,104 @@
+.container{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .warning{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .createKeyBtn{
+            margin-top: 10px;
+            background-color: #0f3fff;
+            width: 120px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    }
+
+    .input{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        
+        input{
+            margin: 0 10px;
+            flex:1;
+            height: 30px;
+            font-size: 17px;
+            padding: 0 10px;
+        }
+
+        button{
+            width: 100px;
+            height: 33px;
+            font-size: 20px;
+        }
+    }
+
+    
+    .userRequests{
+        display: flex;
+        justify-content:center ;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+
+        .request{
+            width: 100%;
+            margin: 10px 0;
+            background-color: aliceblue;
+            box-sizing: border-box;
+            padding: 20px;
+
+            .label{
+                height: 50px;
+                width: 100%;
+            }
+
+            .btn{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                button{
+                    margin-left: 20px;
+                    cursor: pointer;
+                    height: 40px;
+                    min-width: 100px;
+                }
+            }
+        }
+    }
+
+    .doc{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.4);
+
+        .docRef{
+            width: 80%;
+            height: 80%;
+            overflow-y: scroll;
+        }
+    }
+}

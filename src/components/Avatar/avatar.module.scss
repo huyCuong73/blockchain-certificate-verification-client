@@ -1,0 +1,33 @@
+@mixin sm {
+    @media only screen and (max-width: 600px) {
+        @content;
+    }
+}
+
+.avatar{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    font-weight: normal;
+    // background-color: #2225af;
+    color: white;
+    position: relative;
+    user-select: none;
+    text-align: center;
+    // border: 2px solid rgb(175, 175, 175);
+    
+    span{   
+        user-select: none;
+        line-height:50%;
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+}

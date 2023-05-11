@@ -1,0 +1,237 @@
+
+
+.container{
+    width: 100vw;
+    margin-top: 70px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.input{
+    width: 100%;
+    height: 80vh;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+
+}
+
+.inputWrapper{
+    width: 80%;
+    height: 80vh;
+    overflow-y: scroll;
+    background-color: #f2f2f2;
+    padding: 30px 80px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+.uniName{
+    width: 100%;
+    /* min-height: 60px; */
+    font-size: 40px;
+    /* height: fit-content; */
+    text-align: center;
+    /* border-bottom: solid 1px black; */
+    word-break: break-word;
+    font-weight: 600;
+}
+
+.uniName:focus{
+    outline: 0px solid #414141;
+    
+}
+.uniName:empty:before {
+    color: rgba(130, 128, 128, 0.84);
+    content: "Nhập tên trường ...";
+}
+
+
+.title{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.studentInfo{
+    /* background-color: #e1e1e1; */
+    width: 80%;
+    height: fit-content;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.info{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.infoLabel{
+    flex: 0.3;
+    font-size: 18px;
+}
+
+.infoInput{
+    flex: 0.7;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    word-break: break-word;
+}
+
+.infoEditor{
+    flex: 1;
+}
+
+.addSemester{
+    font-size: 24px;
+    width: 100%;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: #868686;
+}
+
+.transcript{
+    width: 100%;
+}
+
+.table{
+    border: 1px solid black;
+    width: 100%;
+}
+
+.tableHeader{
+    width: 100%;
+    display: flex;
+}
+
+.col1{
+    flex: 0.2;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.col2{
+    flex: 0.5;
+    border: 1px solid #000;
+    text-align: center;
+}
+.col3{
+    flex: 0.15;
+    border: 1px solid #000;
+    text-align: center;
+}
+.col4{
+    flex: 0.15;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.subject{
+    width: 100%;
+    min-height: 30px;
+    display: flex;
+}
+
+.id{
+    flex: 0.2;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subjectName{
+    flex: 0.5;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.credits{
+    flex: 0.15;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mark{
+    flex: 0.15;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subjectInput{
+    height: fit-content;
+    width: 95%;
+    height: 90%;
+    border: 0;
+    text-align: center;
+    background-color:#f2f2f2;
+}
+
+.subjectNameInput{
+    height: fit-content;
+    width: 95%;
+    height: 90%;
+    border: 0;
+    background-color:#f2f2f2;
+}
+
+.subjectInput:focus{
+    outline: 0px solid #414141;
+    
+}
+
+.subjectNameInput:focus{
+    outline: 0px solid #414141;
+    
+}
+
+.addSubject{
+    border: #000 1px solid;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.actions{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.docAction{
+    margin: 10px;
+}
+
+
+.docContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(101, 101, 101, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.doc{
+    width: 90vw;
+}

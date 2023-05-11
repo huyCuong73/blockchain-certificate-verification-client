@@ -1,0 +1,229 @@
+.container{
+
+    margin-top: 70px;
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .class{
+        width: 20%;
+        height: 100%;
+        background-color: #f3f3f3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: scroll;
+        padding: 20px;
+        box-sizing: border-box;
+
+        .classItem{
+            cursor: pointer;
+            width: 100%;
+            height: 50px;
+            background-color: #d8d7d7;
+            margin-bottom: 4px;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .addClass{
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: #bcbbbb;
+            align-items: center;
+            height: 40px;
+        }
+    }
+
+    .stuList{
+        width: 70%;
+        height: 100%;
+        background-color: #f1f0f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: scroll;
+        padding: 20px;
+        box-sizing: border-box;
+
+        .stu{
+            
+            width: 100%;
+            height: 50px;
+            background-color: #dddddd;
+            margin-bottom: 4px;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .stuId{
+                flex: 1;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .status{
+                width: 80px;
+                height: 100%;
+                border-left: 1px solid black;
+                color: green;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                a {
+                    width: 60px;
+                    height: 80%;
+                    background-color: #1768ff;
+                    font-size: 13px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    border-radius: 5px;
+                    box-sizing: border-box;
+                    padding-bottom: 1px;
+                    cursor: pointer;
+                    text-decoration: none;
+                }
+
+            }
+        }
+
+        .addStu{
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: #b0b0b0;
+            align-items: center;
+            min-height: 40px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .addClassModal{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(7, 7, 7, 0.4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        .modal{
+            width: 400px;
+            height: 150px;
+            background-color: #fff;
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+
+            .input{
+                width: 80%;
+                margin-bottom: 10px;
+                input{
+                   width: 100%; 
+                   height: 30px;
+                   padding: 0 10px;
+                   box-sizing: border-box;
+                }
+            }
+
+            .closeIcon{
+                cursor: pointer;
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                right: 5px;
+                top: 5px;
+            }
+            .addBtn{
+                cursor: pointer;
+                margin-top: 20px;
+                background-color: #006eff;
+                width: 150px;
+                height: 50px;
+                color: white;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    .regisModal{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(7, 7, 7, 0.4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .box{
+            width: 50%;
+            height: 60%;
+            background-color: #fff;
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+
+            .closeIcon{
+                cursor: pointer;
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                right: 5px;
+                top: 5px;
+            }
+
+            .input{
+                width: 80%;
+                margin-bottom: 10px;
+                input{
+                   width: 100%; 
+                   height: 30px;
+                   padding: 0 10px;
+                   box-sizing: border-box;
+                }
+            }
+
+            .addBtn{
+                cursor: pointer;
+                margin-top: 20px;
+                background-color: #006eff;
+                width: 150px;
+                height: 50px;
+                color: white;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
