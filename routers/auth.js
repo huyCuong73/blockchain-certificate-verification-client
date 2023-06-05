@@ -120,7 +120,7 @@ router.post("/login", async (req,res) => {
                 const accessToken = jwt.sign(
                     { id: userAuth._id, role : userAuth.role},
                     process.env.JWT_KEY,
-                    { expiresIn: "1d" }
+                    { expiresIn: "1y" }
                 );
 
                 const encryptedToken = CryptoJS.AES.encrypt(
