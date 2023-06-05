@@ -1,4 +1,4 @@
-import express from "express";
+import express, { response } from "express";
 const router = express.Router();
 import { AuthModel } from "../models/Auth.js";
 import jwt from "jsonwebtoken";
@@ -22,14 +22,13 @@ function hashPassword(plainPassword) {
 
 router.post("/register",async (req,res) => {
     try{
-        let hashedPw 
+
         hashPassword(req.body.password)
-            .then(async function(hashedPassword) {
-                hashedPw = hashedPassword
+            .then(async hashedPassword => {
 
                 const newAuthInfo = new AuthModel({
                     email: req.body.email,
-                    password: hashedPw
+                    password: hashedPassword
                 })
 
                 await newAuthInfo.save()
@@ -108,28 +107,28 @@ router.post("/get-user", async(req, res) => {
 
 router.post("/login", async (req,res) => {
 
-
-    AuthModel.findOne({email: req.body.email}, function(err, user) {
+    AuthModel.findOne({email: req.body.email}, function(err, userAuth) {
         if (err) {
             console.log(err);
-        } else if (user) {
+        } else if (userAuth) {
 
-        bcrypt.compare(req.body.password, user.password, function(err, isMatch) {
+        bcrypt.compare(req.body.password, userAuth.password, function(err, isMatch) {
             if (err) {
                 console.log(err);
+                res.status(404).json("not found")
             } else if (isMatch) {
                 const accessToken = jwt.sign(
-                    { id: user._id, role : user.role},
-                    "ads",
+                    { id: userAuth._id, role : userAuth.role},
+                    process.env.JWT_KEY,
                     { expiresIn: "1d" }
                 );
 
                 const encryptedToken = CryptoJS.AES.encrypt(
                     accessToken,
-                    "ads"
+                    process.env.AES_KEY
                 ).toString()
 
-                return res.status(200).json({...user._doc, encryptedToken})
+                return res.status(200).json({...userAuth._doc, encryptedToken})
             } else {
                 console.log('Wrong password');
               return res.status(400).json("wrong password")

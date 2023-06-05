@@ -7,6 +7,9 @@ import { RequestModel } from "../models/Request.js";
 import { ResponseModel } from "../models/Response.js";
 import CryptoJS from "crypto-js";
 import cryptico from "cryptico"
+// import * as IPFS from 'ipfs-core'
+
+// const ipfs = await IPFS.create()
 
 const router = express.Router();
 
@@ -26,11 +29,11 @@ router.post("/create-cert", institutionVerify ,async (req, res) => {
         })
     
         const newCert = await certification.save()
-        res.status(200).json(newCert)
+        return res.status(200).json(newCert)
 
     } catch(err){
         console.log(err);
-        res.status(500).json(err)
+        return res.status(500).json(err)
     }
     
 })
@@ -46,17 +49,16 @@ router.post("/get-certs", verify ,async (req, res) => {
 
     } catch(err){
         console.log(err);
-        res.status(404).json("not found")
+        return res.status(404).json("not found")
     }
     
 })
 
-router.post(("/get-generated-certs"),institutionVerify,  async (req,res) => {
+router.post(("/get-generated-certs"), institutionVerify,  async (req,res) => {
     try{
         const certs = await CertificationModel.find({
             createdBy: req.body.id
         })
-
         return res.status(200).json(certs)
 
     } catch(err) {
@@ -69,7 +71,7 @@ router.post(("/get-generated-certs"),institutionVerify,  async (req,res) => {
 router.post("/request/:docId", async (req, res) => {
     try{
         const cert = await CertificationModel.findById(req.params.docId)
-        console.log(req.params.docId);
+   
         const newReq = new RequestModel({
             from: req.body.id,
             to: cert.to,
@@ -78,37 +80,38 @@ router.post("/request/:docId", async (req, res) => {
         })
         
         const r = await newReq.save()
-        res.status(200).json(r)
+        return res.status(200).json(r)
 
     } catch(err){
         console.log(err);
-        res.status(404).json("not found")
+        return res.status(404).json("not found")
     }
     
 })
 
 router.post("/create-response", async (req, res) => {
     try{
-        console.log(JSON.stringify(req.body.data));
+        
         const encryptedData = CryptoJS.AES.encrypt(
             JSON.stringify(req.body.data),
             req.body.key
         ).toString()
         const encryptedAesKey = cryptico.encrypt(req.body.key, req.body.publicKey).cipher;
-        // console.log(encrypted);
+
         const newRes = new ResponseModel({
             reqId: req.body.reqId,
+            from: req.body.from,
             to: req.body.to,
             encryptedData: encryptedData,
             encryptedAesKey: encryptedAesKey
         })
-        
+        console.log(newRes);
         const r = await newRes.save()       
-        res.status(200).json(1)
+        return res.status(200).json(1)
 
     } catch(err){
         console.log(err);
-        res.status(404).json("not found")
+        return res.status(404).json("not found")
     }
     
 })
@@ -119,11 +122,11 @@ router.get("/get-requests/:id", async (req, res) => {
             to: req.params.id
         })
         
-        res.status(200).json(requests)
+        return res.status(200).json(requests)
 
     } catch(err){
         console.log(err);
-        res.status(404).json("not found")
+        return res.status(404).json("not found")
     }
     
 })
@@ -134,11 +137,11 @@ router.get("/get-user-requests/:id", async (req, res) => {
             from: req.params.id
         })
         
-        res.status(200).json(requests)
+        return res.status(200).json(requests)
 
     } catch(err){
         console.log(err);
-        res.status(404).json("not found")
+        return res.status(404).json("not found")
     }
     
 })
@@ -155,13 +158,66 @@ router.get("/get-user-responses/:id", async (req, res) => {
             var decryptedKey = cryptico.decrypt(requests[i].encryptedAesKey, cryptico.generateRSAKey(req.params.id, 1024));
             requests[i] = {...requests[i]._doc, decryptedKey:decryptedKey.plaintext}
         }
-        console.log(requests);
-        res.status(200).json(requests)
+
+        return res.status(200).json(requests)
 
     } catch(err){
         console.log(err);
-        res.status(404).json("not found")
+        return res.status(404).json("not found")
     }
     
 })
+
+router.get("/get-accepted-response/:id", async (req, res) => {
+    try{
+        const responses = await ResponseModel.find({
+            from: req.params.id
+        })
+        
+        return res.status(200).json(responses)
+
+    } catch(err){
+        console.log(err);
+        return res.status(404).json("not found")
+    }
+    
+})
+
+router.delete("/delete-response/:id", async (req, res) => {
+    try{
+        console.log(req);
+        const request = await RequestModel.findById(req.params.id)
+
+        await RequestModel.deleteOne(request._doc)
+
+        await ResponseModel.deleteOne({
+            reqId: request._doc._id,
+        })
+
+        return res.status(200).json("deleted")
+    } catch(err){
+        console.log(err);
+        return res.status(404).json("not found")
+    }
+    
+})
+
+router.post("/get-cid" , async (req,res) => {
+    try{
+        // const uint8Array = req.body.uint8Array
+        // const uint8 = new Uint8Array(uint8Array);
+        // const file = await ipfs.add(uint8)  
+        // const cid = file.cid 
+        // const encoded = base32.encode(cid.bytes);
+        // console.log(encoded);
+        // res.json("a")
+
+    } catch(err){
+        console.log(err);
+        return res.status(404).json("not found")
+    }
+    
+})
+
+
 export default router;
